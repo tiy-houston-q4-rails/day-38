@@ -6,13 +6,35 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Car.create make: "honda", model: "accord"
-Car.create make: "jeep", model: "cherokee"
-Car.create make: "ford", model: "big-ass-truck"
-Car.create make: "mazda", model: "small"
-Car.create make: "tesla", model: "S"
-Car.create make: "chevy", model: "corvette"
+# accord = Car.create make: "honda", model: "accord"
+# cherokee = Car.create make: "jeep", model: "cherokee"
+# big_ass_truck = Car.create make: "ford", model: "big-ass-truck"
+# mazda = Car.create make: "mazda", model: "small"
+# tesla = Car.create make: "tesla", model: "S"
+# corvette = Car.create make: "chevy", model: "corvette"
+#
+# jwo = User.create name: "jwo"
+# chunda = User.create name: "chunda"
+# ben = User.create name: "ben"
+# dwight = User.create name: "Dwight"
+#
+# jwo.cars << accord
+# jwo.cars << tesla
+# ben.cars << corvette
+# ben.cars << tesla
+# chunda.cars << mazda
 
-User.create name: "jwo"
-User.create name: "chunda"
-User.create name: "ben"
+10.times do
+  Car.create make: Faker::Company.name, model: Faker::Company.suffix
+end
+
+500.times do
+  User.create name: Faker::Internet.user_name
+end
+
+User.all.each do |user|
+  cars = Car.all.limit(rand(1..10))
+  cars.each do |car|
+    user.cars << car
+  end
+end

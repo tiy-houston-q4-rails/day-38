@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'pry'
 gem 'active_model_serializers'
+gem 'faker'
