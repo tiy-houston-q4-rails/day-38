@@ -2,12 +2,13 @@ Day 38 -- API and Maps
 ======================
 
 
+## Assignment
+
 1. Create a map
 2. List some stuff on the map
 3. Get map onto heroku
 
-
-Extra:
+### Extra:
 
 1. Create an endpoint to list all your points
 2. Create an endpoint to add a point to your mappy map
