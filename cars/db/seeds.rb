@@ -12,3 +12,7 @@ Car.create make: "ford", model: "big-ass-truck"
 Car.create make: "mazda", model: "small"
 Car.create make: "tesla", model: "S"
 Car.create make: "chevy", model: "corvette"
+
+User.create name: "jwo"
+User.create name: "chunda"
+User.create name: "ben"

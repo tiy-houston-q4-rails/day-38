@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'cars' => 'cars#index'
 
   namespace :api do
+    get "users" => 'users#index'
     get 'cars' => 'cars#index'
   end
 
