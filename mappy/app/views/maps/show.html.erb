@@ -1,0 +1,17 @@
+<h1>Maps#show</h1>
+<p>Find me in app/views/maps/show.html.erb</p>
+
+ <div id="map"></div>
+
+
+<script>
+
+$(window).ready(function(){
+
+  <% @points.each do |point| %>
+    L.marker([<%= point.lat %>, <%= point.lng %>])
+      .addTo(window.map)
+      .bindPopup("<b><%= point.name %></b>");
+  <% end %>
+});
+</script>
